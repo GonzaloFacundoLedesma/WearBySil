@@ -1,0 +1,45 @@
+ul {
+    list-style: none;
+}
+.body {
+    align-items: center;
+}
+
+#listaProductos {
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#listacarrito {
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.producto {
+    background-color: rgb(236, 217, 191);
+    width: 200px;
+    height: 300px;
+    padding: 8px;
+    margin: 8px;
+    border: none;
+    color: rgb(8, 32, 7);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.elementoCarrito {
+    background-color: rgb(185, 117, 165);
+    width: 300px;
+    height: 120px;
+    padding: 8px;
+    margin: 8px;
+    border:none;
+    color: rgb(32, 17, 7);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.notificacion {
+    padding: 8px;
+    color: white;
+}
