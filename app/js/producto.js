@@ -26,7 +26,7 @@ class ProductoView {
             $(`#${randomId}`).remove();
         });
     }
-
+    
     mostrarProductosYCarrito(productos) {
         console.log("ProductoView::mostrarProductosYCarrito");
         
@@ -36,18 +36,26 @@ class ProductoView {
         // Hacer que el carrito se pueda abrir y cerrar
         $("#carrito").css("display", "none");
         $('#imagenCarrito').click(() => {$('#carrito').slideToggle()});
+        $('#cerrarCarrito').click(() => {$('#carrito').slideToggle()});
+        
 
         // Agregar productos al DOM
         for(let producto of productos) {
             // Agregar un nodo producto como hijo del nodo "lista"
             $("#listaProductos").append(
                 `
-                    <div class="producto" id= "producto_${producto.id}">
-                    <h2>${producto.nombre}</h2> 
-                    <img src="${producto.imagen}" width=100>
-                    <p>Precio: ${producto.precio}</p> 
-                    <button class="botoncomprar" id="comprar_${producto.id}">Agregar al carrito</button>
+                <div class="">
+                    
+                    <div class="producto mx-2 mb-2" id= "producto_${producto.id}">
+                        <div class="text-center producto--titulo mb-1">${producto.nombre}</div> 
+                        <div class="row justify-content-center"><img class="producto--imagen" src="${producto.imagen}" ></div>
+                        <div class="text-center mb-1"><strong>Precio: ${producto.precio}</strong></div> 
+                        <div class="row justify-content-center">
+                        <button class="botoncomprar btn btn-success justify-content-center" id="comprar_${producto.id}">Agregar a la compra!</button>
+                        </div>
                     </div>
+                       
+                </div>    
                 `
             );
         }
@@ -66,11 +74,14 @@ class ProductoView {
                 total += producto.ventas*producto.precio;
                 $("#listacarrito").append(
                     `
-                    <li class="elementoCarrito">
-                        <h2>${producto.nombre}</h2> 
+                    
+                    <div class="elementoCarrito" >
+                        <div class="elementoCarrito--tipografia mb-1">${producto.nombre}</div> 
+                        
                         <p>Cantidad: ${producto.ventas}</p> 
-                        <button class="eliminarDelCarrito" id="eliminar_${producto.id}">Eliminar</button>
-                    </li>
+                        <div class=" text-center"><button class="eliminarDelCarrito btn btn-danger mb-1 " id="eliminar_${producto.id}">Eliminar</button></div>
+                        
+                    
                     `
                 );
             }
@@ -79,6 +90,16 @@ class ProductoView {
         $('#total').text(total.toString());
     }
 
+    
+    /*`
+                    <li class="elementoCarrito">
+                        <h2>${producto.nombre}</h2> 
+                        <p>Cantidad: ${producto.ventas}</p> 
+                        <button class="eliminarDelCarrito" id="eliminar_${producto.id}">Eliminar</button>
+                    </li>
+                    `*/
+    
+    
     filtrarProductos(productos, busqueda) {
         for (let producto of productos) {
             if(producto.nombre.toLowerCase().includes(busqueda.toLowerCase())) {
@@ -243,16 +264,6 @@ class ProductoController {
         this.view.actualizarCarrito(this.model.productos);
         this.view.agregarHandlerEliminarDelCarrito((e) => this.eliminarDelCarrito(e.target));
         this.view.notificacion("Se elimino el producto al carrito", "red");
-    }
-
-    // Mostrar seccion de usuario
-    usuario() {
-        this.view.mostrarUsuario();
-    }
-
-    // Mostrar seccion de contacto
-    contacto() {
-        this.view.mostrarContacto();
     }
 
     // Mostrar seccion de error     
