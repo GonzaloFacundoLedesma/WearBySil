@@ -48,8 +48,36 @@ class ProductoView {
                     
                     <div class="producto mx-2 mb-2" id= "producto_${producto.id}">
                         <div class="text-center producto--titulo mb-1">${producto.nombre}</div> 
-                        <div class="row justify-content-center"><img class="producto--imagen" src="${producto.imagen}" ></div>
-                        <div class="text-center mb-1"><strong>Precio: ${producto.precio}</strong></div> 
+                        <div class="text-center"><img class="producto--imagen" src="${producto.imagen}" ></div>
+                        <div class="text-center my-2"><strong>Precio: ${producto.precio}</strong></div> 
+                        
+                        <div class="form-group row justify-content-center align-items-center minh-100 mx-1">
+                                <div class="col-4 align-center "><label  for="talleSelect"><strong>Talle:</strong></label></div>
+                                <div class="col-8"><select class="form-control form-control-sm" id="talleSelect ">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                    </select>
+                                </div>    
+                        </div>
+                        <div class="form-group row justify-content-center align-items-center minh-100 mx-1">
+                                <div class="col-4 align-center "><label  for="colorSelect"><strong>Color:</strong></label></div>
+                                <div class="col-8"><select class="form-control form-control-sm" id="colorSelect">
+                                        <option>Blanco</option>
+                                        <option>Negro</option>
+                                        <option>Azul</option>
+                                        <option>Verde</option>
+                                        
+                                    </select>
+                                </div>    
+                        </div>
+                        
+                        
                         <div class="row justify-content-center">
                         <button class="botoncomprar btn btn-success justify-content-center" id="comprar_${producto.id}">Agregar a la compra!</button>
                         </div>
@@ -62,6 +90,40 @@ class ProductoView {
 
         this.actualizarCarrito(productos);
     }
+       
+    /*PRUEBA CASERA Boton agregar compra-- cargar talle y color cuando hace click guardar esos valores
+    class talle{
+    constructor(valor){
+        this.#talleSelect.value = valor;
+    }
+}
+    
+    talleCargar() {
+        let talle = document.getElementById("talleSelect").value;
+        
+       }
+    talleCargar();
+    
+    
+    confirmarCompra(){
+        let confirmarCompra =document.getElementById('confirmarCompra');
+        
+        if (total > 0){
+
+        }else{
+            alert("No hay nada en el changuito");
+        }
+        };
+    
+    confirmarCompra();
+    $confirmarCompra = document.querySelector('#confirmarCompra');
+    $confirmarCompra.addEventListener('click', confirmarCompraClicked);
+
+    function confirmarCompraClicked() {
+        alert("compra realizada");
+        
+    }*/
+    
 
     actualizarCarrito(productos) {
         console.log("ProductoView::actualizarCarrito");
@@ -76,9 +138,11 @@ class ProductoView {
                     `
                     
                     <div class="elementoCarrito" >
-                        <div class="elementoCarrito--tipografia mb-1">${producto.nombre}</div> 
+                        <div class="elementoCarrito--tipografia">${producto.nombre}</div> 
                         
-                        <p>Cantidad: ${producto.ventas}</p> 
+                        <p>Cantidad: ${producto.ventas}</p>
+                        <strong >Talle: <strong></strong> </strong>  
+                        <strong >Color: <strong></strong> </strong> 
                         <div class=" text-center"><button class="eliminarDelCarrito btn btn-danger mb-1 " id="eliminar_${producto.id}">Eliminar</button></div>
                         
                     
@@ -111,11 +175,7 @@ class ProductoView {
     }
 
     // Metodos para mostrar las distintas secciones
-    mostrarUsuario() {
-        $("#app").html(TEMPLATE_USUARIO);
-    }
-
-    
+        
     mostrarError() {
         $("#app").html(TEMPLATE_ERROR);
     }
