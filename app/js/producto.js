@@ -53,15 +53,15 @@ class ProductoView {
                         
                         <div class="form-group row justify-content-center align-items-center minh-100 mx-1">
                                 <div class="col-4 align-center "><label  for="talleSelect"><strong>Talle:</strong></label></div>
-                                <div class="col-8"><select class="form-control form-control-sm" id="talleSelect ">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                        <option>7</option>
-                                        <option>8</option>
+                                <div class="col-8"><select class="form-control form-control-sm" id="talleSelect" onchange="cargarTalle">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
                                     </select>
                                 </div>    
                         </div>
@@ -90,8 +90,28 @@ class ProductoView {
 
         this.actualizarCarrito(productos);
     }
-       
+    /*ID IMPORTANTES 
+    Agregar a la compra! -> class="botoncomprar" id="comprar_${producto.id}"
+    selectColor = #colorSelect
+    selectTalle = #talleSelect
+    id="mostrarTalle" = Div donde  deberia aparecer aparecer el .value ELEMENTO DEL CARRITO 
+    id="mostrarColor" = Div donde  deberia aparecer aparecer el .value ELEMENTO DEL CARRITO 
+
+    #listacarrito = se utiliza un appenda para agregar los elementos seleccionados: en esta lista se muestran los elementos del carrito (dentro de estos debería aparecer talle y color escogidos)
+    
+    id="confirmarCompra" = ID del boton que ejecutaría la compra final está dentro de un modal
+    id="total" es el total de los valores que suman los productos del carrito
+    */
+    
+    
+    
     /*PRUEBA CASERA Boton agregar compra-- cargar talle y color cuando hace click guardar esos valores
+    cargarTalle(){
+    $talleSelect = document.getElementById('talleSelect').value;
+
+    $('#comprar_${producto.id}').click(() => {$talleSelect});
+    console.log("${talleSelect}");   
+    };
     class talle{
     constructor(valor){
         this.#talleSelect.value = valor;
@@ -125,7 +145,7 @@ class ProductoView {
     }*/
     
 
-    actualizarCarrito(productos) {
+    actualizarCarrito(productos, talleSelect) {
         console.log("ProductoView::actualizarCarrito");
 
         $("#listacarrito").html("");
@@ -141,9 +161,13 @@ class ProductoView {
                         <div class="elementoCarrito--tipografia">${producto.nombre}</div> 
                         
                         <p>Cantidad: ${producto.ventas}</p>
-                        <strong >Talle: <strong></strong> </strong>  
-                        <strong >Color: <strong></strong> </strong> 
-                        <div class=" text-center"><button class="eliminarDelCarrito btn btn-danger mb-1 " id="eliminar_${producto.id}">Eliminar</button></div>
+                        <div class="container-fluid mb-1">
+                            <div class="row">
+                                <div id="mostrarTalle" class="col-4"><strong >Talle:  </strong></div>  
+                                <div id="mostrarColor" class="col-6"><strong >Color: </strong></div> 
+                            </div>
+                        </div>
+                        <div class=" text-center"><button class="eliminarDelCarrito btn btn-danger  " id="eliminar_${producto.id}">Eliminar</button></div>
                         
                     
                     `
@@ -155,14 +179,7 @@ class ProductoView {
     }
 
     
-    /*`
-                    <li class="elementoCarrito">
-                        <h2>${producto.nombre}</h2> 
-                        <p>Cantidad: ${producto.ventas}</p> 
-                        <button class="eliminarDelCarrito" id="eliminar_${producto.id}">Eliminar</button>
-                    </li>
-                    `*/
-    
+        
     
     filtrarProductos(productos, busqueda) {
         for (let producto of productos) {
@@ -265,6 +282,7 @@ class ProductoModel {
     agregarAlCarrito(idProducto) {
         this.productos.find(p => p.id === idProducto).comprar(1);
         this.guardarCarrito();
+        
     }
 
     crearProducto(nombre,precio,id,imagen) {
