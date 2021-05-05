@@ -2,6 +2,7 @@ $secundaryColor: #E9C1D7;
 $primaryColor: #ECD4C6;
 $accentColor: #672A5F;
 $primaryColor1: #D4C0D3;
+$negro: #0a000a;
 body{
     background-color: $primaryColor;
 }
@@ -38,7 +39,7 @@ body{
     }
     .footerPreguntas{
         @extend .footerTipografia;
-        color: black;
+        color: $negro;
         font-weight: bolder;
         
     }
@@ -48,7 +49,7 @@ body{
         max-width: 100%;
     }   
     .hoverNegro :hover{
-        color: black;
+        color: $negro;
         text-decoration: none;}
     .hoverBlanco :hover{
         color: white;
@@ -79,3 +80,77 @@ body{
     .containerInicio{
         height: 70vh;
         }
+
+
+//Carrito y elementos del carrito
+
+ul {
+    list-style: none;
+}
+
+
+#listaProductos {
+     
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+}
+
+#listacarrito {
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.producto {
+    background-color: $primaryColor1;
+    width: 320px;
+    height: 500px;
+    
+    
+    border: 2px solid $negro;
+    color: $negro;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.producto--titulo{
+    font-size: 24px;
+    color:  $negro;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+
+}
+.producto--imagen{
+    text-align: center;
+    width: 300px;
+    height: 240px;
+    border: 1px solid ;
+}
+
+.elementoCarrito {
+    background-color: $accentColor;
+    width: 300px;
+    height: 150px;
+    align-items: center;
+    border: 2px solid $negro;
+    color: $negro;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.elementoCarrito--tipografia{
+    font-size: 20px;
+    font-weight:600;
+}
+.totalTipografia{
+    font-size: 24px;
+    font-weight:600;
+}
+.talleTipografia{
+    font: size 24px;
+    font-weight:500;
+}
+.notificacion {
+    padding: 8px;
+    color: white;
+}
