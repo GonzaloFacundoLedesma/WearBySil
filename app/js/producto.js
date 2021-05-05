@@ -11,8 +11,11 @@ class Producto {
 
     comprar(cant){
         this.ventas = this.ventas+cant;
+        
     }
 }
+
+
 
 // Vista - Modificacion del DOM y eventos
 class ProductoView {
@@ -53,7 +56,7 @@ class ProductoView {
                         
                         <div class="form-group row justify-content-center align-items-center minh-100 mx-1">
                                 <div class="col-4 align-center "><label  for="talleSelect"><strong>Talle:</strong></label></div>
-                                <div class="col-8"><select class="form-control form-control-sm" id="talleSelect" onchange="cargarTalle">
+                                <div class="col-8"><select class="form-control form-control-sm" id="talleSelect_${producto.id}" >
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -67,7 +70,7 @@ class ProductoView {
                         </div>
                         <div class="form-group row justify-content-center align-items-center minh-100 mx-1">
                                 <div class="col-4 align-center "><label  for="colorSelect"><strong>Color:</strong></label></div>
-                                <div class="col-8"><select class="form-control form-control-sm" id="colorSelect">
+                                <div class="col-8"><select class="form-control form-control-sm" id="colorSelect_${producto.id}">
                                         <option>Blanco</option>
                                         <option>Negro</option>
                                         <option>Azul</option>
@@ -87,73 +90,26 @@ class ProductoView {
                 `
             );
         }
-
+        
         this.actualizarCarrito(productos);
     }
-    /*ID IMPORTANTES 
-    Agregar a la compra! -> class="botoncomprar" id="comprar_${producto.id}"
-    selectColor = #colorSelect
-    selectTalle = #talleSelect
-    id="mostrarTalle" = Div donde  deberia aparecer aparecer el .value ELEMENTO DEL CARRITO 
-    id="mostrarColor" = Div donde  deberia aparecer aparecer el .value ELEMENTO DEL CARRITO 
-
-    #listacarrito = se utiliza un appenda para agregar los elementos seleccionados: en esta lista se muestran los elementos del carrito (dentro de estos debería aparecer talle y color escogidos)
-    
-    id="confirmarCompra" = ID del boton que ejecutaría la compra final está dentro de un modal
-    id="total" es el total de los valores que suman los productos del carrito
-    */
     
     
     
-    /*PRUEBA CASERA Boton agregar compra-- cargar talle y color cuando hace click guardar esos valores
-    cargarTalle(){
-    $talleSelect = document.getElementById('talleSelect').value;
-
-    $('#comprar_${producto.id}').click(() => {$talleSelect});
-    console.log("${talleSelect}");   
-    };
-    class talle{
-    constructor(valor){
-        this.#talleSelect.value = valor;
-    }
-}
-    
-    talleCargar() {
-        let talle = document.getElementById("talleSelect").value;
-        
-       }
-    talleCargar();
-    
-    
-    confirmarCompra(){
-        let confirmarCompra =document.getElementById('confirmarCompra');
-        
-        if (total > 0){
-
-        }else{
-            alert("No hay nada en el changuito");
-        }
-        };
-    
-    confirmarCompra();
-    $confirmarCompra = document.querySelector('#confirmarCompra');
-    $confirmarCompra.addEventListener('click', confirmarCompraClicked);
-
-    function confirmarCompraClicked() {
-        alert("compra realizada");
-        
-    }*/
-    
-
-    actualizarCarrito(productos, talleSelect) {
+    actualizarCarrito(productos) {
         console.log("ProductoView::actualizarCarrito");
 
         $("#listacarrito").html("");
         let total = 0;
+       
+        
         for(let producto of productos) {
             // Si el producto tiene ventas mostrar en el carrito
+            
             if (producto.ventas > 0) {
                 total += producto.ventas*producto.precio;
+                let talle = document.getElementById("talleSelect_"+producto.id).value;
+                let color = document.getElementById("colorSelect_"+producto.id).value;
                 $("#listacarrito").append(
                     `
                     
@@ -163,8 +119,8 @@ class ProductoView {
                         <p>Cantidad: ${producto.ventas}</p>
                         <div class="container-fluid mb-1">
                             <div class="row">
-                                <div id="mostrarTalle" class="col-4"><strong >Talle:  </strong></div>  
-                                <div id="mostrarColor" class="col-6"><strong >Color: </strong></div> 
+                                <div id="mostrarTalle" class="col-4"><strong >Talle: `+talle+` </strong></div>  
+                                <div id="mostrarColor" class="col-6"><strong >Color:  `+color+` </strong></div> 
                             </div>
                         </div>
                         <div class=" text-center"><button class="eliminarDelCarrito btn btn-danger  " id="eliminar_${producto.id}">Eliminar</button></div>
@@ -231,7 +187,7 @@ class ProductoModel {
             console.log('ProductoModel::cargarProductos');
 
             // cargar productos con getJson
-            $.getJSON('../data/productos.json', (res, estado) => {
+            $.getJSON('../data/productos.json', (res) => {
 
                 // res es un Array de objetos Producto
                 for (let producto of res) {
@@ -262,12 +218,12 @@ class ProductoModel {
 
     guardarCarrito() {
         console.log('ProductoModel::guardarCarrito');
-
+       
         // guardar carrito en el localstorage
         const carrito = [];
         for (let producto of this.productos) {
             if(producto.ventas > 0) {
-                const guardar = { id:producto.id, ventas: producto.ventas };
+                const guardar = { id:producto.id, ventas: producto.ventas};
                 carrito.push(guardar);
             }
         }
@@ -286,6 +242,7 @@ class ProductoModel {
     }
 
     crearProducto(nombre,precio,id,imagen) {
+        
         console.log('ProductoModel::crearProducto');
         let nuevoProducto = new Producto(nombre,precio,id,imagen);
         this.productos.push(nuevoProducto);
