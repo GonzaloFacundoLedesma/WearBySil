@@ -107,6 +107,11 @@ ul {
   font-size: 20px;
   font-weight: 600; }
 
+.botonColor {
+  color: white;
+  background-color: #672A5F;
+  font-weight: 600; }
+
 .totalTipografia {
   font-size: 24px;
   font-weight: 600; }

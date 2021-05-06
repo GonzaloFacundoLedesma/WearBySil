@@ -1,12 +1,13 @@
+
 const TEMPLATE_PRODUCTOS = 
 `
-        <div id="cabecera" class="ml-3 my-3">
+        <!--<div id="cabecera" class="ml-3 my-3">
             <strong>Buscar </strong><input id="buscarProducto" type="text">
-        </div>      
-        <div id="listaProductos" class="justify-content-center"></div>
+        </div>-->      
+        <div id="listaProductos" class="justify-content-center mt-4 mb-2"></div>
         <div  class="col text-center my-3"><!-- Button trigger modal -->
-        <button class="btn btn-success " id="imagenCarrito"   data-toggle="modal" data-target="#carritoModal" data-backdrop="static" data-keyboard="false">
-          Mostrar compra
+        <button class="btn botonColor btn-lg" id="imagenCarrito"   data-toggle="modal" data-target="#carritoModal" data-backdrop="static" data-keyboard="false">
+          Mostrar carrito
         </button>
         </div>
         <div id = "carrito" > 
@@ -26,7 +27,7 @@ const TEMPLATE_PRODUCTOS =
                 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrarCarrito">Volver</button>
-                    <button id="confirmarCompra"  type="button" class="btn btn-success">Confirmar compra</button>
+                    <button id="compraFinal"  type="button" class="btn btn-success " >Confirmar compra</button>
                 </div>
                 </div>
             </div>
@@ -35,7 +36,24 @@ const TEMPLATE_PRODUCTOS =
 ;
 
 
+   
 
-                    
-             
+/*console.log("Hola");
+let confirmarCompra = document.getElementById('confirmarCompra');
+confirmarCompra.click = finalizarCompra();
+function finalizarCompra(){
+    console.log("chau");
+    alert("La compra se realizo con exito!!");
+    
+    
+    console.log("Hola");
+let confirmarCompra = document.getElementById('confirmarCompra');
+confirmarCompra.addEventListener("click", function() {
+    console.log("chau");
+    alert("La compra se realizo con exito!!");
+  }); 
+}*/
+          
     //<button class="botonCarrito btn btn-success" id="imagenCarrito">Mostrar compra</button>
+
+   

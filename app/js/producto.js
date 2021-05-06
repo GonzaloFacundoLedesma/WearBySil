@@ -41,6 +41,17 @@ class ProductoView {
         $('#imagenCarrito').click(() => {$('#carrito').slideToggle()});
         $('#cerrarCarrito').click(() => {$('#carrito').slideToggle()});
         
+        $('#compraFinal').click(function(){
+            
+            
+                alert("Su compra es un exito el equipo de Wear by Sil se comunicará con usted!"); 
+                $("#listacarrito").empty();
+                $('#total').empty();
+                localStorage.clear();
+                
+            
+            
+        }); 
 
         // Agregar productos al DOM
         for(let producto of productos) {
@@ -82,7 +93,7 @@ class ProductoView {
                         
                         
                         <div class="row justify-content-center">
-                        <button class="botoncomprar btn btn-success justify-content-center" id="comprar_${producto.id}">Agregar a la compra!</button>
+                        <button class="botoncomprar btn botonColor justify-content-center" id="comprar_${producto.id}">Agregar a la compra!</button>
                         </div>
                     </div>
                        
@@ -132,6 +143,7 @@ class ProductoView {
         }
         // Actualizar total del carrito
         $('#total').text(total.toString());
+        
     }
 
     
@@ -212,8 +224,10 @@ class ProductoModel {
 
             cargarCarrito.forEach(v => {
                 this.productos.find(p => p.id == v.id).comprar(v.ventas);
+                
             });
         }
+        
     }
 
     guardarCarrito() {
@@ -306,4 +320,6 @@ class ProductoController {
         this.view.mostrarError();
     }
 }
+
+   
 
