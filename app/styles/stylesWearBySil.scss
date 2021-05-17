@@ -113,27 +113,29 @@ body{
 }
 
 .producto {
-    background-color: $primaryColor1;
+    border-radius: 30px;
+    background-color: $durazno;
     width: 320px;
-    height: 500px;
+    height: 450px;
     
     
-    border: 2px solid $negro;
+    border: 1px solid $negro;
     color: $negro;
     font-family: Arial, Helvetica, sans-serif;
     
 }
-.producto--titulo{
-    font-size: 24px;
-    color:  $negro;
+.producto--letra{
+    font-size: 16px;
+    color:  $accentColor;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
 
 }
 .producto--imagen{
+    border-radius: 30px;
     text-align: center;
-    width: 300px;
-    height: 240px;
+    width: 275px;
+    height: 300px;
     border: 1px solid ;
 }
 
@@ -155,6 +157,19 @@ body{
     background-color: $accentColor;
     font-weight: 600;
     
+}
+.modalCSS{
+    background-color: $accentColor;
+
+}
+.botonHacerPedido{
+    color: $durazno;
+    text-decoration: none;
+
+}
+.modalTipografia{
+    color: $accentColor;
+    text-decoration: none;
 }
 .totalTipografia{
     font-size: 24px;

@@ -1,9 +1,11 @@
 class Producto {
-    constructor(nombre, precio, id, imagen = "../img/sinimagen.jpg"){
+    constructor(nombre, precio, id, imagen = "../img/sinimagen.jpg", talle, color){
         this.nombre = nombre;
         this.precio = precio;
         this.imagen = imagen;
         this.id = id;
+        this.talle = talle;
+        this.color = color;
         this.ventas = 0;
         if ( imagen === "") 
             this.imagen="../img/sinimagen.jpg";
@@ -58,46 +60,51 @@ class ProductoView {
             // Agregar un nodo producto como hijo del nodo "lista"
             $("#listaProductos").append(
                 `
-                <div class="">
+    <div class="">
                     
-                    <div class="producto mx-2 mb-2" id= "producto_${producto.id}">
-                        <div class="text-center producto--titulo mb-1">${producto.nombre}</div> 
-                        <div class="text-center"><img class="producto--imagen" src="${producto.imagen}" ></div>
-                        <div class="text-center my-2"><strong>Precio: ${producto.precio}</strong></div> 
-                        
-                        <div class="form-group row justify-content-center align-items-center minh-100 mx-1">
-                                <div class="col-4 align-center "><label  for="talleSelect"><strong>Talle:</strong></label></div>
-                                <div class="col-8"><select class="form-control form-control-sm" id="talleSelect_${producto.id}" >
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                    </select>
-                                </div>    
-                        </div>
-                        <div class="form-group row justify-content-center align-items-center minh-100 mx-1">
-                                <div class="col-4 align-center "><label  for="colorSelect"><strong>Color:</strong></label></div>
-                                <div class="col-8"><select class="form-control form-control-sm" id="colorSelect_${producto.id}">
-                                        <option>Blanco</option>
-                                        <option>Negro</option>
-                                        <option>Azul</option>
-                                        <option>Verde</option>
-                                        
-                                    </select>
-                                </div>    
-                        </div>
-                        
-                        
-                        <div class="row justify-content-center">
-                        <button class="botoncomprar btn botonColor justify-content-center" id="comprar_${producto.id}">Agregar a la compra!</button>
-                        </div>
-                    </div>
-                       
-                </div>    
+        <div class="producto mx-3 mb-3" id= "producto_${producto.id}">
+            
+            <div class="text-center mt-4"><img class="producto--imagen" src="${producto.imagen}" ></div>
+            <div class="text-center mt-2 mb-1 producto--letra ">${producto.nombre}</div> 
+            <div class="text-center mt-1 producto--letra"> $${producto.precio}</div> 
+            
+            
+        
+            <!-- Button trigger modal -->
+            <div class="row justify-content-center">
+            <button id="botonVer_${producto.id}" type="button" class="btn botonColor justify-content-center mt-2" data-toggle="modal" data-target="#verModal_${producto.id}">
+              Ver
+            </button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="verModal_${producto.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content modalCSS">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="verModalLabel"> ${producto.nombre}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div>Talles disponibles: ${producto.talle}</div>
+                    <div> Colores: ${producto.color} </div>
+                    <div>Precio: ${producto.precio}</div>
+                    <div>Info img talles</div>
+                    <div>Info </div>
+                  </div>
+                  <div class="modal-footer hoverNegro">
+                    <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
+                    <button type="button" class="btn botonHacerPerdido "> <a href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
+                    </button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>    
+            
+        </div>   
+    </div>     
                 `
             );
         }
@@ -106,7 +113,9 @@ class ProductoView {
     }
     
     
-    
+    VerProductos(){
+        $('#botonVer').click
+    }
     actualizarCarrito(productos) {
         console.log("ProductoView::actualizarCarrito");
 
@@ -206,7 +215,9 @@ class ProductoModel {
                     this.crearProducto(producto.nombre,
                         producto.precio,
                         producto.id,
-                        producto.imagen
+                        producto.imagen,
+                        producto.talle,
+                        producto.color
                     );
                 }
                 this.productosCargados = true;
@@ -255,10 +266,10 @@ class ProductoModel {
         
     }
 
-    crearProducto(nombre,precio,id,imagen) {
+    crearProducto(nombre,precio,id,imagen,talle,color) {
         
         console.log('ProductoModel::crearProducto');
-        let nuevoProducto = new Producto(nombre,precio,id,imagen);
+        let nuevoProducto = new Producto(nombre,precio,id,imagen,talle,color);
         this.productos.push(nuevoProducto);
     }
 }

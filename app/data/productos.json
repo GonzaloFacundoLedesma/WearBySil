@@ -3,49 +3,65 @@
         "id":"chicasPoder",
         "nombre":"Remera chicas al poder",
         "precio":900, 
-        "imagen":"../assets/remeras/chicasPoder.png" 
+        "imagen":"../assets/remeras/chicasPoder.png",
+        "color": "verde - blanco - azul",
+        "talle": "1 al 8"
     },    
     { 
         "id":"dub",
         "nombre":"Remera dub",
         "precio":800, 
-        "imagen":"../assets/remeras/dub.jpeg" 
+        "imagen":"../assets/remeras/dub.jpeg",
+        "color": "lila - blanco - azul",
+        "talle": "1 al 8" 
     },
     { 
         "id":"harta",
         "nombre":"Remera harta",
         "precio":1000, 
-        "imagen":"../assets/remeras/harta.png" 
+        "imagen":"../assets/remeras/harta.png",
+        "color": "negro - blanco - azul",
+        "talle": "1 al 8" 
     },
     { 
         "id":"ladyDi",
         "nombre":"Remera Lady Di",
         "precio":1000, 
-        "imagen":"../assets/remeras/ladyDi.jpeg" 
+        "imagen":"../assets/remeras/ladyDi.jpeg",
+        "color": "negro - blanco - azul",
+        "talle": "1 al 8" 
     },
     { 
         "id":"looneyToons",
         "nombre":"Remera Looney Toons",
         "precio":800, 
-        "imagen":"../assets/remeras/looneyToons.png" 
+        "imagen":"../assets/remeras/looneyToons.png",
+        "color": "negro - blanco - azul",
+        "talle": "1 al 8" 
     },
     { 
         "id":"minujin",
         "nombre":"Remera Minujin",
         "precio":900, 
-        "imagen":"../assets/remeras/Minujin.png" 
+        "imagen":"../assets/remeras/Minujin.png",
+        "color": "negro - blanco - azul",
+        "talle": "1 al 8" 
     },
     { 
         "id":"mujeres",
         "nombre":"Remera mujeres",
         "precio":900, 
-        "imagen":"../assets/remeras/mujeres.jpeg" 
+        "imagen":"../assets/remeras/mujeres.jpeg",
+        "color": "negro - blanco - azul",
+        "talle": "1 al 8" 
     },
     { 
         "id":"princesa",
         "nombre":"Remera princesa",
         "precio":900, 
-        "imagen":"../assets/remeras/princesa.jpeg" 
+        "imagen":"../assets/remeras/princesa.jpeg",
+        "color": "negro - blanco - azul",
+        "talle": "1 al 8" 
     }
     
 ]

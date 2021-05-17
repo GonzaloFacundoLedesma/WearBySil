@@ -1,11 +1,22 @@
 
 const TEMPLATE_PRODUCTOS = 
 `
+        
+        
         <!--<div id="cabecera" class="ml-3 my-3">
             <strong>Buscar </strong><input id="buscarProducto" type="text">
-        </div>-->      
+        </div>-->     
         <div id="listaProductos" class="justify-content-center mt-4 mb-2"></div>
-        <div  class="col text-center my-3"><!-- Button trigger modal -->
+         
+`
+;
+
+
+   
+
+/*
+
+<div  class="col text-center my-3"><!-- Button trigger modal -->
         <button class="btn botonColor btn-lg" id="imagenCarrito"   data-toggle="modal" data-target="#carritoModal" data-backdrop="static" data-keyboard="false">
           Mostrar carrito
         </button>
@@ -32,13 +43,13 @@ const TEMPLATE_PRODUCTOS =
                 </div>
             </div>
         </div>
-`
-;
+        -->
 
 
-   
 
-/*console.log("Hola");
+
+
+console.log("Hola");
 let confirmarCompra = document.getElementById('confirmarCompra');
 confirmarCompra.click = finalizarCompra();
 function finalizarCompra(){
