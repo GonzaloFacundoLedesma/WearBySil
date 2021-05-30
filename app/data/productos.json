@@ -1,67 +1,164 @@
 [
     { 
-        "id":"chicasPoder",
-        "nombre":"Remera chicas al poder",
-        "precio":900, 
-        "imagen":"../assets/remeras/chicasPoder.png",
-        "color": "verde - blanco - azul",
-        "talle": "1 al 8"
-    },    
-    { 
-        "id":"dub",
-        "nombre":"Remera dub",
-        "precio":800, 
-        "imagen":"../assets/remeras/dub.jpeg",
-        "color": "lila - blanco - azul",
-        "talle": "1 al 8" 
-    },
-    { 
-        "id":"harta",
-        "nombre":"Remera harta",
-        "precio":1000, 
-        "imagen":"../assets/remeras/harta.png",
-        "color": "negro - blanco - azul",
-        "talle": "1 al 8" 
-    },
-    { 
         "id":"ladyDi",
-        "nombre":"Remera Lady Di",
-        "precio":1000, 
+        "nombre":"Lady Di",
+        "precio":1080, 
         "imagen":"../assets/remeras/ladyDi.jpeg",
-        "color": "negro - blanco - azul",
-        "talle": "1 al 8" 
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera" 
+    },
+    { 
+        "id":"iris",
+        "nombre":"Iris",
+        "precio":1080, 
+        "imagen":"",
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera" 
+    },
+    { 
+        "id":"miranda",
+        "nombre":"Miranda",
+        "precio":1080, 
+        "imagen":"",
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera" 
+    },
+    { 
+        "id":"team",
+        "nombre":"Team",
+        "precio":1080, 
+        "imagen":"",
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera" 
     },
     { 
         "id":"looneyToons",
-        "nombre":"Remera Looney Toons",
-        "precio":800, 
+        "nombre":"Looney Toons",
+        "precio":1080, 
         "imagen":"../assets/remeras/looneyToons.png",
-        "color": "negro - blanco - azul",
-        "talle": "1 al 8" 
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera" 
+    },
+    { 
+        "id":"harta",
+        "nombre":"Harta",
+        "precio":1080, 
+        "imagen":"../assets/remeras/harta.png",
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera" 
     },
     { 
         "id":"minujin",
-        "nombre":"Remera Minujin",
-        "precio":900, 
+        "nombre":"Marta Minujin",
+        "precio":1080, 
         "imagen":"../assets/remeras/Minujin.png",
-        "color": "negro - blanco - azul",
-        "talle": "1 al 8" 
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera" 
     },
     { 
-        "id":"mujeres",
-        "nombre":"Remera mujeres",
-        "precio":900, 
-        "imagen":"../assets/remeras/mujeres.jpeg",
-        "color": "negro - blanco - azul",
-        "talle": "1 al 8" 
+        "id":"friends",
+        "nombre":"Friends",
+        "precio":1080, 
+        "imagen":"",
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera" 
     },
     { 
-        "id":"princesa",
-        "nombre":"Remera princesa",
-        "precio":900, 
-        "imagen":"../assets/remeras/princesa.jpeg",
-        "color": "negro - blanco - azul",
-        "talle": "1 al 8" 
-    }
-    
+        "id":"chicasPoder",
+        "nombre":"Chicas al poder",
+        "precio":1080, 
+        "imagen":"../assets/remeras/chicasPoder.png",
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera"
+    },    
+    { 
+        "id":"andreu",
+        "nombre":"Andreu",
+        "precio":1080, 
+        "imagen":"",
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": "remera" 
+    },
+    { 
+        "id":"irisRedondo",
+        "nombre":"Buzo Iris",
+        "precio":1800, 
+        "imagen":"",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": "buzoCuelloRedondo"
+    },
+    { 
+        "id":"tigreRedondo",
+        "nombre":"Buzo Tigre",
+        "precio":1800, 
+        "imagen":"",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": "buzoCuelloRedondo"
+    },
+    { 
+        "id":"lunasRedondo",
+        "nombre":"Buzo Lunas",
+        "precio":1800, 
+        "imagen":"",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": "buzoCuelloRedondo"
+    }, 
+    { 
+        "id":"girlBossRedondo",
+        "nombre":"Buzo Girl Boss",
+        "precio":1800, 
+        "imagen":"",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": "buzoCuelloRedondo"
+    },
+    { 
+        "id":"irisCapucha",
+        "nombre":"Buzo Iris con capucha",
+        "precio":2700, 
+        "imagen":"",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": "buzoCapucha"
+    },
+    { 
+        "id":"tigreCapucha",
+        "nombre":"Buzo Tigre con capucha",
+        "precio":2700, 
+        "imagen":"",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": "buzoCapucha"
+    },
+    { 
+        "id":"lunasCapucha",
+        "nombre":"Buzo Lunas con capucha",
+        "precio":2700, 
+        "imagen":"",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": "buzoCapucha"
+    },
+    { 
+        "id":"girlBossCapucha",
+        "nombre":"Buzo Girl Boss con capucha",
+        "precio":2700, 
+        "imagen":"",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": "buzoCapucha"
+    } 
 ]
