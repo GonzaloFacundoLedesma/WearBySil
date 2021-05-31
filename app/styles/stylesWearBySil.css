@@ -1,41 +1,44 @@
+@charset "UTF-8";
 body {
-  background-image: linear-gradient(to right, #D4C0D3, #ECD4C6); }
+  background-image: linear-gradient(to right, #D4C0D3 0%, #FFFFFF 100%); }
 
 .navColor {
-  background-image: linear-gradient(to right, #D4C0D3, #ECD4C6); }
+  background-image: linear-gradient(to right, #D4C0D3 0%, #FFFFFF 100%);
+  box-shadow: 0px 3px 6px #00000029; }
 
 .footer {
-  background-color: #672A5F;
-  font-family: 'Courier New', Courier, monospace; }
+  background-color: #672A5F; }
 
 .footerEspaciador {
   background-color: #672A5F;
   max-width: 100%;
   height: 5vh; }
 
+.footerTitulo {
+  text-align: left;
+  font: normal normal bold 20px Arial;
+  letter-spacing: 0px;
+  color: #E9C1D7;
+  opacity: 1; }
+
 .footerFinal {
   background-color: #672A5F;
   max-width: 100%;
   height: 12.5vh; }
 
-.footer__borderR {
-  background-color: #672A5F; }
+.footerTipografia {
+  color: #E9C1D7;
+  font-family: 'Roboto', sans-serif;
+  font: 15px;
+  letter-spacing: 0px;
+  text-decoration: none; }
 
-.footerTipografia, .footerPreguntas {
-  color: #EBDFEA;
-  font-size: 20px;
-  text-decoration: none;
-  justify-content: center;
-  align-content: center; }
-
-.footerPreguntas {
-  color: #EBDFEA;
-  font-weight: bolder; }
-
-.footerLinea {
-  height: 0.25vh;
-  background-color: white;
-  max-width: 100%; }
+.footerRedSocial {
+  color: #E9C1D7;
+  font-family: 'Roboto', sans-serif;
+  font-size: 48px;
+  letter-spacing: 0px;
+  text-decoration: none; }
 
 .hoverNegro :hover {
   color: #0a000a;
@@ -50,14 +53,15 @@ body {
   text-decoration: none; }
 
 .navTipografia {
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 20px;
   text-decoration: none;
   justify-content: center;
   align-content: center;
-  color: #672A5F; }
+  color: #0a000a; }
 
 .navHover :hover {
-  color: #672A5F;
+  color: #0a000a;
   text-decoration: underline #672A5F; }
 
 .navDropdown--background {
@@ -66,7 +70,13 @@ body {
 .containerInicio {
   height: 70vh; }
 
-#listaProductos {
+.encabezadoProductos {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #0a000a; }
+
+#listaRemeras {
   display: flex;
   flex-wrap: wrap; }
 
@@ -75,26 +85,28 @@ body {
   flex-wrap: wrap; }
 
 .producto {
+  background: #EBDFEA 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
   border-radius: 30px;
-  background-color: #EBDFEA;
-  width: 320px;
-  height: 450px;
-  border: 1px solid #0a000a;
-  color: #0a000a;
+  opacity: 1;
+  width: 290px;
+  height: 425px;
   font-family: Arial, Helvetica, sans-serif; }
 
 .producto--letra {
-  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: left;
+  font-size: 20px;
+  letter-spacing: 0px;
   color: #672A5F;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600; }
+  opacity: 1; }
 
 .producto--imagen {
   border-radius: 30px;
   text-align: center;
-  width: 275px;
-  height: 300px;
-  border: 1px solid; }
+  width: 250px;
+  height: 290px;
+  margin-top: 10px; }
 
 .elementoCarrito {
   background-color: #672A5F;
@@ -110,12 +122,53 @@ body {
   font-weight: 600; }
 
 .botonColor {
-  color: #EBDFEA;
-  background-color: #672A5F;
-  font-weight: 600; }
+  border: 1px solid #E9C1D7;
+  background: #EBDFEA 0% 0% no-repeat padding-box;
+  color: #672A5F;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0px;
+  font-weight: 900;
+  opacity: 1;
+  width: 120px;
+  height: 40px; }
 
+.hoverBorder:hover {
+  border: 2px solid #672A5F; }
+
+/*Modal*/
 .modalCSS {
-  background-color: #672A5F; }
+  background: transparent linear-gradient(90deg, #D4C0D3 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+  border-radius: 30px;
+  width: 100%; }
+
+.producto--imagen--modal {
+  border-radius: 30px;
+  text-align: center; }
+
+.modal--PrecioTitulo {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #0a000a;
+  font-size: 30px; }
+
+.modal--Descuento {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #672A5F;
+  font-size: 18px;
+  font-weight: 800; }
+
+.modal--Descuento {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #672A5F;
+  font-size: 18px;
+  font-weight: 800; }
+
+.modal--Info {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #672A5F;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none; }
 
 .botonHacerPedido {
   color: #EBDFEA;
@@ -153,3 +206,25 @@ body {
 
 .whatsapp-icon {
   margin-top: 13px; }
+
+/* Como comprar sección*/
+.tituloComoComprar {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #0a000a;
+  font-size: 32px;
+  font-weight: 750; }
+
+.infoComoComprar {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #672A5F;
+  font-size: 20px;
+  font-weight: 500; }
+
+.talleRadio {
+  border-radius: 25px; }
+
+.infoTalles {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #672A5F;
+  font-size: 24px;
+  font-weight: 650; }

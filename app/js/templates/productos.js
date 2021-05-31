@@ -6,7 +6,8 @@ const TEMPLATE_PRODUCTOS =
         <!--<div id="cabecera" class="ml-3 my-3">
             <strong>Buscar </strong><input id="buscarProducto" type="text">
         </div>-->     
-        <div id="listaProductos" class="justify-content-center mt-4 mb-2"></div>
+        <div class="text-center encabezadoProductos mt-3">Todos los productos</div>
+        <div id="listaRemeras" class="justify-content-center mt-4 mb-2"></div>
          
 `
 ;

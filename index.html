@@ -11,54 +11,62 @@
     <link rel="stylesheet" href="app/styles/stylesWearBySil.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--Fuentes-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
     <title>Wear by Sil</title>
 </head>
 <body>
     <header>
-        <nav class="navbar  navbar-expand-lg navColor" >
+      <nav class="navbar  navbar-expand-lg navColor" >
             
             
-            <a class="navbar-brand navTipografia" href="#">Wear by Sil</a>
+        <a class="navbar-brand navTipografia d-lg-none" href="#">Wear by Sil</a>
+        <a class="navbar-brand navTipografia d-none d-lg-block ml-4" ><img src="./app/assets/WearbySil.png" width="80" height="80"></a>
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse  " id="navbarNavDropdown">
+          
+        <div class="nav-item mr-2 navHover d-none d-lg-block">
+            <a class="navTipografia  bi-facebook " href="https://www.facebook.com/Wear-by-Sil-105951284718868/"></a>
+        </div>
+        <div class="nav-item navHover d-none d-lg-block">
+            <a class="navTipografia  bi-instagram " href="https://www.instagram.com/wearbysil/"></a>
+        </div>
+          
+          <div class="ml-auto  ">
+          <ul class="navbar-nav  ">
+            <li class="nav-item active ">
+              <div class=" navHover "><a class="nav-link navTipografia" href="index.html">Inicio </a></div>
+            </li>
+            <li class="nav-item  ">
+              <div class=" navHover "><a class="nav-link navTipografia" href="#quienesSomos">Quienes somos</a></div>
+            </li>
             
-            <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon "></span>
-            </button>
-            <div class="collapse navbar-collapse  " id="navbarNavDropdown">
+            <li class="nav-item dropdown ">
+              <div class="navHover">
+              <a class="nav-link navHover dropdown-toggle navTipografia" href="./app/pages/productos.html"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Productos
+              </a>
+              <div class="dropdown-menu navDropdown--background " aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item navTipografia" href="app/pages/productos.html">Remeras</a>
+                <a class="dropdown-item navTipografia" title="Proximamente" href="">Buzos</a>
+                <a class="dropdown-item navTipografia" title="Proximamente" href="">Prendas exclusivas</a>
+              </div>
+              </div>
               
-            <div class="nav-item mr-2 navHover d-none d-lg-block">
-                <a class="navTipografia  bi-facebook " href="https://www.facebook.com/Wear-by-Sil-105951284718868/"></a>
-            </div>
-            <div class="nav-item navHover d-none d-lg-block">
-                <a class="navTipografia  bi-instagram " href="https://www.instagram.com/wearbysil/"></a>
-            </div>
-              
-              <div class="ml-auto  ">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active ">
-                  <div class=" navHover "><a class="nav-link navTipografia" href="#">Home </a></div>
-                </li>
-                <li class="nav-item  ">
-                  <div class=" navHover "><a class="nav-link navTipografia" href="#quienesSomos">Quienes somos</a></div>
-                </li>
-                
-                <li class="nav-item dropdown navHover ">
-                  <a class="nav-link   dropdown-toggle navTipografia" href="app/pages/productos.html" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Productos
-                  </a>
-                  <div class="dropdown-menu navDropdown--background  " aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item navTipografia" href="app/pages/productos.html">Remeras</a>
-                    <a class="dropdown-item navTipografia" title="Proximamente" href="">Buzos</a>
-                    <a class="dropdown-item navTipografia" title="Proximamente" href="">Prendas exclusivas</a>
-                  </div>
-                </li>
-                <li class="nav-item navTipografia">
-                  <div class="navHover"><a class="nav-link navTipografia" href="#contacto">Contacto</a></div>
-                  </li>
-              </ul>
-            </div>
-            </div>
-          </nav>
+            </li>
+            <li class="nav-item navTipografia">
+              <div class="navHover"><a class="nav-link navTipografia" href="#contacto">Contacto</a></div>
+              </li>
+          </ul>
+        </div>
+        </div>
+      </nav>  
+      
     </header>
     <div class="container-fluid">
     <div class="row"> <!--Comienzo carousel inicio-->
@@ -111,42 +119,51 @@
   </div>  
     <!--Cuerpo-->
     <!-- whatsApp-->
-    <a href="https://wa.me/541136605642?text=Me%20gustaría%20saber%20el%20precio%20del%20coche" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+    <a href="https://wa.me/541136605642?text=Me%20gustaría%20saber%20el%20precio%20del%20coche" class="whatsapp hoverBlanco" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
     
-    <footer id="contacto" class="footer"> 
-        <div class="footerEspaciador"></div>
-        <div class="text-center hoverNegro"><a class="footerTipografia" href="index.html" >Home </a></div>
-        <div class="text-center hoverNegro">
-            <a class="footerTipografia  bi-facebook " href="https://www.facebook.com/Wear-by-Sil-105951284718868/"></a>
-            <a class="footerTipografia  bi-instagram " href="https://www.instagram.com/wearbysil/"></a>
-            
+    <footer id="contacto" class="footer "> 
+      <div class="footerEspaciador"></div>
+      <div class="container-fluid ">  
+        <div class="row justify-content-center ">
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-3">
+            <div class="footerTitulo mb-3">ESCRIBINOS</div>
+            <div class=" hoverNegro">
+              <a class="footerTipografia  bi-whatsapp mb-1" href="https://wa.me/5492216562492"> Nuestro WhatsApp</a>
+          </div>
+          <div class=" hoverNegro">
+            <a class="footerTipografia  bi bi-envelope-open mb-1" href="mailto:juansilvina296@gmail.com"> Nuestro email</a>
         </div>
-        <div class="text-center hoverNegro">
-            <a class="footerTipografia  bi-whatsapp " href=""> 011 XXXX XXXX</a>
-        </div>
-        <div class="footerLinea mt-3 mb-3"></div>
-      <div class="container-fluid">  
-        <div class="row">
+        <div class=" hoverNegro">
+          <a class="footerTipografia  bi bi-geo-alt mb-1" href="https://goo.gl/maps/LjH23Z1ruhua4AxM9"> Berisso - Provincia de Buenos Aires</a>
+      </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-3">
+            <div class="footerTitulo mb-3">MÁS INFO</div>
+              <div class=" hoverNegro">
+                <a class="footerTipografia mb-2" href="./app/pages/comoComprar.html">¿Cómo comprar?</a>
+              </div>
+              <div class="  hoverNegro">
+                <a class="footerTipografia mb-2" href="./app/pages/guiaTalles.html">Guía de talles</a>
+              </div>
           
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center hoverNegro">
-                <a class="footerPreguntas" href="#">Guía de talles</a>
+          
+         
+          </div>
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 mb-3">
+            <div class="footerTitulo mb-2">SEGUINOS</div>
+            <div class=" hoverNegro ">
+              <a class="footerRedSocial  bi bi-facebook justify-content-start"  href="https://www.facebook.com/Wear-by-Sil-105951284718868/"></a>
+              <a class="footerRedSocial  bi bi-instagram justify-content-end" href="https://www.instagram.com/wearbysil/"></a>
+              
             </div>
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center hoverNegro">
-                <a class="footerPreguntas" href="#">¿Cómo comprar?</a>
-            </div>
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center hoverNegro">
-                <a class="footerPreguntas" href="#">Preguntas frecuentes</a>
-            </div>
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3 text-center hoverNegro">
-                <a class="footerPreguntas" href="#">Medios de pago</a>
-            </div>
-           
-
+          </div>
+          
+        
         </div>
-      </div>        
+      </div>
 
-        <div class="footerEspaciador"></div>
-    </footer>
+      <div class="footerEspaciador d-none d-lg-block"></div>
+  </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    

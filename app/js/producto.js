@@ -1,5 +1,5 @@
 class Producto {
-    constructor(nombre, precio, id, imagen = "../img/sinimagen.jpg", talle, color){
+    constructor(nombre, precio, id, imagen = "../img/sinimagen.jpg", talle, color, tipo){
         this.nombre = nombre;
         this.precio = precio;
         this.imagen = imagen;
@@ -7,6 +7,7 @@ class Producto {
         this.talle = talle;
         this.color = color;
         this.ventas = 0;
+        this.tipo = tipo;
         if ( imagen === "") 
             this.imagen="../img/sinimagen.jpg";
     }
@@ -58,40 +59,61 @@ class ProductoView {
         // Agregar productos al DOM
         for(let producto of productos) {
             // Agregar un nodo producto como hijo del nodo "lista"
-            $("#listaProductos").append(
+            
+            $("#listaRemeras").append(
                 `
     <div class="">
                     
         <div class="producto mx-3 mb-3" id= "producto_${producto.id}">
             
             <div class="text-center mt-4"><img class="producto--imagen" src="${producto.imagen}" ></div>
-            <div class="text-center mt-2 mb-1 producto--letra ">${producto.nombre}</div> 
-            <div class="text-center mt-1 producto--letra"> $${producto.precio}</div> 
+            <div class="text-center mt-2  producto--letra ">${producto.nombre}</div> 
+            <div class="text-center producto--letra"> $${producto.precio} </div> 
             
             
         
             <!-- Button trigger modal -->
-            <div class="row justify-content-center">
-            <button id="botonVer_${producto.id}" type="button" class="btn botonColor justify-content-center mt-2" data-toggle="modal" data-target="#verModal_${producto.id}">
-              Ver
+            <div class="row justify-content-center ">
+            <button id="botonVer_${producto.id}" type="button" class="btn botonColor hoverBorder justify-content-center mt-2 bi bi-eye" data-toggle="modal" data-target="#verModal_${producto.id}">
+                VER
             </button>
             </div>
             <!-- Modal -->
             <div class="modal fade" id="verModal_${producto.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content modalCSS">
-                  <div class="modal-header">
+                  <!--<div class="modal-header">
                     <h5 class="modal-title" id="verModalLabel"> ${producto.nombre}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-                  </div>
+                  </div>-->
+                  
                   <div class="modal-body">
-                    <div>Talles disponibles: ${producto.talle}</div>
-                    <div> Colores: ${producto.color} </div>
-                    <div>Precio: ${producto.precio}</div>
-                    <div>Info img talles</div>
-                    <div>Info </div>
+                  
+                  <div class="container-fluid">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img class="img-fluid producto--imagen--modal" src="${producto.imagen}" >
+                        </div>
+                        <div class="col-lg-6">
+                                <div class="modal--PrecioTitulo">${producto.nombre}</div>
+                                <div class="modal--PrecioTitulo mb-3">$${producto.precio}</div>
+                                <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo. </div>
+                                <div class="modal--Info"> Colores disponibles:</div>
+                                <div class="modal--Info mb-3"> ${producto.color} </div>
+                                <div class="modal--Info mb-3"><strong>Talles disponibles: ${producto.talle}</strong></div>
+                                <div class="modal--Info navHover mb-3"><a class="modal--Info" href="./guiaTalles.html">Guía de talles</a> </div>
+                                
+                                
+                                
+                                
+                        </div>
+                    </div>
+                  </div>      
                   </div>
                   <div class="modal-footer hoverNegro">
                     <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
@@ -107,8 +129,8 @@ class ProductoView {
     </div>     
                 `
             );
-        }
-        
+    
+    }
         this.actualizarCarrito(productos);
     }
     
@@ -266,10 +288,10 @@ class ProductoModel {
         
     }
 
-    crearProducto(nombre,precio,id,imagen,talle,color) {
+    crearProducto(nombre,precio,id,imagen,talle,color,tipo) {
         
         console.log('ProductoModel::crearProducto');
-        let nuevoProducto = new Producto(nombre,precio,id,imagen,talle,color);
+        let nuevoProducto = new Producto(nombre,precio,id,imagen,talle,color,tipo);
         this.productos.push(nuevoProducto);
     }
 }
