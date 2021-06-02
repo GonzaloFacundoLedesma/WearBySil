@@ -65,7 +65,8 @@ body {
   text-decoration: underline #672A5F; }
 
 .navDropdown--background {
-  background-image: linear-gradient(to right, #D4C0D3, #ECD4C6); }
+  background-image: linear-gradient(to right, #D4C0D3 0%, #FFFFFF 100%);
+  text-decoration: none; }
 
 .containerInicio {
   height: 70vh; }
@@ -121,7 +122,7 @@ body {
   font-size: 20px;
   font-weight: 600; }
 
-.botonColor {
+.botonColor, .botonColorForm {
   border: 1px solid #E9C1D7;
   background: #EBDFEA 0% 0% no-repeat padding-box;
   color: #672A5F;
@@ -228,3 +229,35 @@ body {
   color: #672A5F;
   font-size: 24px;
   font-weight: 650; }
+
+/*Form*/
+.botonColorForm {
+  font-weight: 500;
+  font-size: 16px;
+  width: 100px;
+  height: 40px;
+  background: #F1EBF1; }
+
+.tipografiaForm {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #672A5F;
+  font-size: 12px;
+  font-weight: 600; }
+
+.ccsForm {
+  border-radius: 25px;
+  border: 1px solid #E9C1D7;
+  background-color: #EBDFEA;
+  color: #672A5F; }
+
+.tipografiaContactoTitulo {
+  font-family: 'Roboto', sans-serif;
+  color: #672A5F;
+  font-size: 28px;
+  font-weight: 700; }
+
+.tipografiaContactoInfo {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #672A5F;
+  font-size: 16px;
+  font-weight: 500; }

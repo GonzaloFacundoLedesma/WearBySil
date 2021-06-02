@@ -30,7 +30,7 @@
         "id":"team",
         "nombre":"Team",
         "precio":1080, 
-        "imagen":"../assets/remeras/remeraTeamBlanca.png",
+        "imagen":"../assets/remeras/remeraTeamBlanca.jpeg",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
         "tipo": "remera" 
