@@ -182,8 +182,9 @@ class ProductoView {
     
     filtrarProductos(productos, busqueda) {
         for (let producto of productos) {
-            if(producto.nombre.toLowerCase().includes(busqueda.toLowerCase())) {
+            if( (producto.nombre.toLowerCase().includes(busqueda.toLowerCase())) ) {
                 $(`#producto_${producto.id}`).show();
+               
             } else {
                 $(`#producto_${producto.id}`).hide();
             }
