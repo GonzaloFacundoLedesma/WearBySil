@@ -7,7 +7,16 @@ const TEMPLATE_PRODUCTOS =
             <strong>Buscar </strong><input id="buscarProducto" type="text">
         </div>-->     
         <div class="text-center encabezadoProductos mt-3">Todos los productos</div>
-        <div id="listaRemeras" class="justify-content-center mt-4 mb-2"></div>
+        <div id="remerasListado" class="text-center encabezadoListas mt-2">Remeras</div>
+        <div id="listaRemeras" class="justify-content-center mt-2 mb-2"></div>
+        <!-- VER SI INCLUIR BOTON VER MÄS Y VER MENOS
+        <div id="" class="justify-content-center mt-2 mb-2 ">
+        <button class="btn botonColor hoverBorder justify-content-center mt-2 ">Ver más remeras</button>
+        </div>-->
+        <div id="buzosListado" class="text-center encabezadoListas mt-2">Buzos</div>
+        <div id="listaBuzos" class="justify-content-center mt-2 mb-2"></div>
+        <div id="unicasListado" class="text-center encabezadoListas mt-2">Prendas únicas</div>
+        <div id="listaUnicas" class="justify-content-center mt-2 mb-2"></div>
          
 `
 ;

@@ -28,11 +28,20 @@ body{
         text-decoration: none;
     }
     .hoverAccent :hover{
-        color: $accentColor;
+        color: $morado;
         text-decoration: none;
     }
      
+.redSocialVertical{
+    color: $negro;
+    font-size: 16px;
+    font-weight: 800;
+    font-family: 'Josefin Sans', sans-serif;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    
 
+}
 
 
     .navTipografia{
@@ -56,6 +65,7 @@ body{
    
     .containerInicio{
         height: 70vh;
+        border-radius: 18px;
         }
     .buscador{
         border: 1px solid $negro;
@@ -147,13 +157,32 @@ body{
 
 .encabezadoProductos{
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 600;
     color: $negro;
 }
-
+.encabezadoListas{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: $morado;
+}
 
 #listaRemeras {
+     
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+}
+#listaBuzos {
+     
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+}
+#listaUnicas {
      
     display: flex;
     flex-wrap: wrap;
@@ -179,6 +208,7 @@ body{
     
     
     font-family: Arial, Helvetica, sans-serif;
+    
     
 }
 .producto--letra{

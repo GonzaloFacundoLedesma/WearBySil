@@ -21,6 +21,14 @@ body {
   color: #672A5F;
   text-decoration: none; }
 
+.redSocialVertical {
+  color: #0a000a;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: 'Josefin Sans', sans-serif;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg); }
+
 .navTipografia {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 20px;
@@ -38,7 +46,8 @@ body {
   text-decoration: none; }
 
 .containerInicio {
-  height: 70vh; }
+  height: 70vh;
+  border-radius: 18px; }
 
 .buscador {
   border: 1px solid #0a000a;
@@ -108,11 +117,25 @@ input::placeholder {
 
 .encabezadoProductos {
   font-family: 'Roboto', sans-serif;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 600;
   color: #0a000a; }
 
+.encabezadoListas {
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #672A5F; }
+
 #listaRemeras {
+  display: flex;
+  flex-wrap: wrap; }
+
+#listaBuzos {
+  display: flex;
+  flex-wrap: wrap; }
+
+#listaUnicas {
   display: flex;
   flex-wrap: wrap; }
 

@@ -6,25 +6,19 @@
         "imagen":"../assets/remeras/ladyDi.png",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
-        "tipo": "remera" 
+        "tipo": 0,
+        "favNuevo": 0
     },
-    { 
-        "id":"iris",
-        "nombre":"Iris",
-        "precio":1080, 
-        "imagen":"../assets/remeras/remeraIrisBlanca.jpeg",
-        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
-        "talle": "1 al 8",
-        "tipo": "remera" 
-    },
+    
     { 
         "id":"miranda",
         "nombre":"Miranda",
         "precio":1080, 
-        "imagen":"",
+        "imagen":"../assets/remeras/remeraMiranda.jpeg",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
-        "tipo": "remera" 
+        "tipo": 0,
+        "favNuevo": 0 
     },
     { 
         "id":"team",
@@ -33,7 +27,8 @@
         "imagen":"../assets/remeras/remeraTeamBlanca.jpeg",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
-        "tipo": "remera" 
+        "tipo": 0,
+        "favNuevo": 0 
     },
     { 
         "id":"looneyToons",
@@ -42,7 +37,8 @@
         "imagen":"../assets/remeras/remeraLooneyToons.jpeg",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
-        "tipo": "remera" 
+        "tipo": 0,
+        "favNuevo": 0
     },
     { 
         "id":"harta",
@@ -51,7 +47,8 @@
         "imagen":"../assets/remeras/harta.png",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
-        "tipo": "remera" 
+        "tipo": 0,
+        "favNuevo": 1 
     },
     { 
         "id":"minujin",
@@ -60,7 +57,18 @@
         "imagen":"../assets/remeras/remeraMinujin.jpeg",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
-        "tipo": "remera" 
+        "tipo": 0,
+        "favNuevo": 0 
+    },
+    { 
+        "id":"iris",
+        "nombre":"Iris",
+        "precio":1080, 
+        "imagen":"../assets/remeras/remeraIrisBlanca.jpeg",
+        "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
+        "talle": "1 al 8",
+        "tipo": 0,
+        "favNuevo": 0 
     },
     { 
         "id":"friends",
@@ -69,7 +77,8 @@
         "imagen":"../assets/remeras/remeraFriends.jpeg",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
-        "tipo": "remera" 
+        "tipo": 0,
+        "favNuevo": 0 
     },
     { 
         "id":"chicasPoder",
@@ -78,7 +87,8 @@
         "imagen":"../assets/remeras/remeraChicasalPoder.jpeg",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
-        "tipo": "remera"
+        "tipo": 0,
+        "favNuevo": 0
     },    
     { 
         "id":"andreu",
@@ -87,16 +97,18 @@
         "imagen":"../assets/remeras/andreu.jpeg",
         "color": "Blanco, negro, violeta, verde, fucsia, naranja y amarillo",
         "talle": "1 al 8",
-        "tipo": "remera" 
+        "tipo": 0,
+        "favNuevo": 0 
     },
     { 
         "id":"irisRedondo",
         "nombre":"Buzo Iris",
         "precio":1800, 
-        "imagen":"",
+        "imagen":"../assets/buzos/buzoIrisNegro.jpeg",
         "color": "Negro y azul",
         "talle": "1 al 8",
-        "tipo": "buzo"
+        "tipo": 1,
+        "favNuevo": 0
     },
     { 
         "id":"tigreRedondo",
@@ -105,54 +117,71 @@
         "imagen":"../assets/buzos/buzoRedondoTigre.jpeg",
         "color": "Negro y azul",
         "talle": "1 al 8",
-        "tipo": "buzo"
+        "tipo": 1,
+        "favNuevo": 0
+    },
+    { 
+        "id":"constelacion",
+        "nombre":"Buzo Constelación",
+        "precio":1800, 
+        "imagen":"../assets/buzos/buzoConstelacion.jpeg",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": 1,
+        "favNuevo": 0
+    },
+    { 
+        "id":"planetas",
+        "nombre":"Buzo Planetas",
+        "precio":1800, 
+        "imagen":"../assets/buzos/buzoPlanetas.jpeg",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": 1,
+        "favNuevo": 1
     },
     { 
         "id":"lunasRedondo",
         "nombre":"Buzo Lunas",
         "precio":1800, 
         "imagen":"../assets/buzos/buzoLunas.jpeg",
-        "color": "Negro y azul",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
-        "tipo": "buzo"
+        "tipo": 1,
+        "favNuevo": 0
     }, 
-    { 
-        "id":"girlBoosRedondo",
-        "nombre":"Buzo Girl Boos",
-        "precio":1800, 
-        "imagen":"../assets/buzos/buzoGirlBoosNegro.jpeg",
-        "color": "Negro y azul",
-        "talle": "1 al 8",
-        "tipo": "buzo"
-    },
+    
     { 
         "id":"irisCapucha",
         "nombre":"Buzo Iris con capucha",
         "precio":2700, 
         "imagen":"../assets/buzos/buzoCapuchaIris.jpeg",
-        "color": "Negro y azul",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
-        "tipo": "buzo"
+        "tipo": 1,
+        "favNuevo": 1
     },
     { 
         "id":"tigreCapucha",
         "nombre":"Buzo Tigre con capucha",
         "precio":2700, 
         "imagen":"../assets/buzos/buzoCapuchaTigre.jpeg",
-        "color": "Negro y azul",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
-        "tipo": "buzo"
+        "tipo": 1,
+        "favNuevo": 0
     },
-    
     { 
-        "id":"lunasCapucha",
-        "nombre":"Buzo Lunas con capucha",
+        "id":"universoCapucha",
+        "nombre":"Buzo Universo con capucha",
         "precio":2700, 
-        "imagen":"",
-        "color": "Negro y azul",
+        "imagen":"../assets/buzos/buzoUniverso.jpeg",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
-        "tipo": "buzo"
+        "tipo": 1,
+        "favNuevo": 0
     },
+
     { 
         "id":"girlGoodVibes",
         "nombre":"Buzo Good Vibes con capucha",
@@ -160,43 +189,68 @@
         "imagen":"../assets/buzos/buzoGoodVibesCapucha.jpeg",
         "color": "Negro y azul",
         "talle": "1 al 8",
-        "tipo": "buzo"
+        "tipo": 1,
+        "favNuevo": 0
+    },
+    { 
+        "id":"bibliaCapucha",
+        "nombre":"Buzo Biblia con capucha",
+        "precio":2700, 
+        "imagen":"../assets/buzos/buzoBiblia.jpeg",
+        "color": "Blanco, negro y azul",
+        "talle": "1 al 8",
+        "tipo": 1,
+        "favNuevo": 0
+    },
+    { 
+        "id":"girlBoosRedondo",
+        "nombre":"Buzo Girl Boos",
+        "precio":1800, 
+        "imagen":"../assets/buzos/buzoGirlBoosBlanco.jpeg",
+        "color": "Negro y azul",
+        "talle": "1 al 8",
+        "tipo": 1,
+        "favNuevo": 0
     },
     { 
         "id":"pantalonOslo",
         "nombre":"Pantalon Oslo",
-        "precio":3000, 
+        "precio":1200, 
         "imagen":"../assets/prendasUnicas/pantalonOslo.jpeg",
         "color": "Rojo",
-        "talle": "unico",
-        "tipo": "unica"
+        "talle": "S-M talle único",
+        "tipo": 2,
+        "favNuevo": 0
     },
     { 
         "id":"camisaAmapola",
-        "nombre":"Camisa Amapola",
-        "precio":2000, 
+        "nombre":"Camisa negra",
+        "precio":850, 
         "imagen":"../assets/prendasUnicas/camisaAmapola.jpeg",
         "color": "Negro",
-        "talle": "unico",
-        "tipo": "unica"
+        "talle": "S-M talle único",
+        "tipo": 2,
+        "favNuevo": 0
     },
     { 
-        "id":"saquitoPink",
-        "nombre":"Saquito Pink",
-        "precio":2500, 
-        "imagen":"../assets/prendasUnicas/saquitoPink.jpeg",
+        "id":"conjutoPink",
+        "nombre":"Conjunto Pink",
+        "precio":1100, 
+        "imagen":"../assets/prendasUnicas/conjuntoPink.jpg",
         "color": "Rosa",
         "talle": "unico",
-        "tipo": "unica"
+        "tipo": 2,
+        "favNuevo": 0
     },
     { 
         "id":"blusitaInversa",
-        "nombre":"Blusita Inversa",
-        "precio":2000, 
+        "nombre":"Blusita Rayada",
+        "precio":850, 
         "imagen":"../assets/prendasUnicas/blusitaInversa.jpeg",
         "color": "ver imagen",
-        "talle": "unico",
-        "tipo": "unica"
+        "talle": "S-M",
+        "tipo": 2,
+        "favNuevo": 0
     },
     { 
         "id":"vestidoTauro",
@@ -205,33 +259,18 @@
         "imagen":"../assets/prendasUnicas/vestidoTauro.jpeg",
         "color": "Negro",
         "talle": "unico",
-        "tipo": "unica"
+        "tipo": 2,
+        "favNuevo": 0
     },
     { 
         "id":"blusitaCala",
         "nombre":"Blusita Cala",
-        "precio":2100, 
+        "precio":1200, 
         "imagen":"../assets/prendasUnicas/blusitaCala.jpeg",
         "color": "Blanca",
-        "talle": "unico",
-        "tipo": "unica"
-    },
-    { 
-        "id":"pantalonSerVerdeBlusitaGold",
-        "nombre":"Set pantalón y blusa Gold",
-        "precio":4100, 
-        "imagen":"../assets/prendasUnicas/pantalonSetVerdeBlusitaGold.jpeg",
-        "color": "Imagen",
-        "talle": "unico",
-        "tipo": "unica"
-    },
-    { 
-        "id":"blusitaLine",
-        "nombre":"Blusita Line",
-        "precio":2200, 
-        "imagen":"../assets/prendasUnicas/blusitaLine.jpeg",
-        "color": "Rojo",
-        "talle": "unico",
-        "tipo": "unica"
-    }    
+        "talle": "único",
+        "tipo": 2,
+        "favNuevo": 0
+    }
+        
 ]

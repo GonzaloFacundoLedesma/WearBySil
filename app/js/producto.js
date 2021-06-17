@@ -1,5 +1,8 @@
+
+	
+
 class Producto {
-    constructor(nombre, precio, id, imagen = "../img/sinimagen.jpg", talle, color, tipo){
+    constructor(nombre, precio, id, imagen = "../img/sinimagen.jpg", talle, color, tipo, favNuevo){
         this.nombre = nombre;
         this.precio = precio;
         this.imagen = imagen;
@@ -8,6 +11,7 @@ class Producto {
         this.color = color;
         this.ventas = 0;
         this.tipo = tipo;
+        this.favNuevo = favNuevo;
         if ( imagen === "") 
             this.imagen="../img/sinimagen.jpg";
     }
@@ -32,19 +36,24 @@ class ProductoView {
             $(`#${randomId}`).remove();
         });
     }
-    
+    /*Definir constante Enumerales ropa=0 etc */ 
     mostrarProductosYCarrito(productos) {
         console.log("ProductoView::mostrarProductosYCarrito");
         
         // Cargar template de productos
+
+
         $("#app").html(TEMPLATE_PRODUCTOS);
 
         // Hacer que el carrito se pueda abrir y cerrar
-        $("#carrito").css("display", "none");
+        /*$("#carrito").css("display", "none");
         $('#imagenCarrito').click(() => {$('#carrito').slideToggle()});
         $('#cerrarCarrito').click(() => {$('#carrito').slideToggle()});
+
+        $('#verMasRemeras').click(() => {$('#listaRemeras').slideToggle()});
+        $('#verMasRemeras').click(() => {$('#listaRemeras').slideToggle()});
         
-        $('#compraFinal').click(function(){
+        /*$('#compraFinal').click(function(){
             
             
                 alert("Su compra es un exito el equipo de Wear by Sil se comunicará con usted!"); 
@@ -54,13 +63,16 @@ class ProductoView {
                 
             
             
-        }); 
+        });*/ 
 
         // Agregar productos al DOM
         for(let producto of productos) {
             // Agregar un nodo producto como hijo del nodo "lista"
             
-            $("#listaRemeras").append(
+
+            if(producto.tipo === 0){
+            /*ListaRemeras*/
+            $("#listaRemeras").append(  
                 `
     <div class="">
                     
@@ -102,11 +114,11 @@ class ProductoView {
                         <div class="col-lg-6">
                                 <div class="modal--PrecioTitulo">${producto.nombre}</div>
                                 <div class="modal--PrecioTitulo mb-3">$${producto.precio}</div>
-                                <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo. </div>
+                                <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo o transferencia bancaria. </div>
                                 <div class="modal--Info"> Colores disponibles:</div>
                                 <div class="modal--Info mb-3"> ${producto.color} </div>
                                 <div class="modal--Info mb-3"><strong>Talles disponibles: ${producto.talle}</strong></div>
-                                <div class="modal--Info navHover mb-3"><a class="modal--Info" href="./guiaTalles.html">Guía de talles</a> </div>
+                                <div class="modal--Info navHover mb-3"><a class="modal--Info" target="_blank" href="./guiaTalles.html">Guía de talles</a> </div>
                                 
                                 
                                 
@@ -117,7 +129,7 @@ class ProductoView {
                   </div>
                   <div class="modal-footer hoverNegro">
                     <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
-                    <button type="button" class="btn botonHacerPerdido "> <a href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
+                    <button type="button" class="btn botonHacerPerdido "> <a target="_blank" href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
                     </button>
                     
                   </div>
@@ -127,8 +139,232 @@ class ProductoView {
             
         </div>   
     </div>     
-                `
-            );
+       
+    `);
+    }
+    if(producto.tipo === 1){
+    /*ListaBuzos*/
+
+    $("#listaBuzos").append(  
+        `
+<div class="">
+            
+<div class="producto mx-3 mb-3" id= "producto_${producto.id}">
+    
+    <div class="text-center mt-4"><img class="producto--imagen" src="${producto.imagen}" ></div>
+    <div class="text-center mt-2  producto--letra ">${producto.nombre}</div> 
+    <div class="text-center producto--letra"> $${producto.precio} </div> 
+    
+    
+
+    <!-- Button trigger modal -->
+    <div class="row justify-content-center ">
+    <button id="botonVer_${producto.id}" type="button" class="btn botonColor hoverBorder justify-content-center mt-2 bi bi-eye" data-toggle="modal" data-target="#verModal_${producto.id}">
+        VER
+    </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="verModal_${producto.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modalCSS">
+          <!--<div class="modal-header">
+            <h5 class="modal-title" id="verModalLabel"> ${producto.nombre}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>-->
+          
+          <div class="modal-body">
+          
+          <div class="container-fluid">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid producto--imagen--modal" src="${producto.imagen}" >
+                </div>
+                <div class="col-lg-6">
+                        <div class="modal--PrecioTitulo">${producto.nombre}</div>
+                        <div class="modal--PrecioTitulo mb-3">$${producto.precio}</div>
+                        <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo o transferencia bancaria. </div>
+                        <div class="modal--Info"> Colores disponibles:</div>
+                        <div class="modal--Info mb-3"> ${producto.color} </div>
+                        <div class="modal--Info mb-3"><strong>Talles disponibles: ${producto.talle}</strong></div>
+                        <div class="modal--Info navHover mb-3"><a class="modal--Info" target="_blank" href="./guiaTalles.html">Guía de talles</a> </div>
+                        
+                        
+                        
+                        
+                </div>
+            </div>
+          </div>      
+          </div>
+          <div class="modal-footer hoverNegro">
+            <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
+            <button type="button" class="btn botonHacerPerdido "> <a target="_blank" href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </div>    
+    
+</div>   
+</div>     
+
+`
+
+);
+if(producto.favNuevo === 1){
+    
+    $("#listaFav").append(  
+        `
+<div class="">
+            
+<div class="producto mx-3 mb-3" id= "producto_${producto.id}">
+    
+    <div class="text-center mt-4"><img class="producto--imagen" src="${producto.imagen}" ></div>
+    <div class="text-center mt-2  producto--letra ">${producto.nombre}</div> 
+    <div class="text-center producto--letra"> $${producto.precio} </div> 
+    
+    
+
+    <!-- Button trigger modal -->
+    <div class="row justify-content-center ">
+    <button id="botonVer_${producto.id}" type="button" class="btn botonColor hoverBorder justify-content-center mt-2 bi bi-eye" data-toggle="modal" data-target="#verModal_${producto.id}">
+        VER
+    </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="verModal_${producto.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modalCSS">
+          <!--<div class="modal-header">
+            <h5 class="modal-title" id="verModalLabel"> ${producto.nombre}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>-->
+          
+          <div class="modal-body">
+          
+          <div class="container-fluid">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid producto--imagen--modal" src="${producto.imagen}" >
+                </div>
+                <div class="col-lg-6">
+                        <div class="modal--PrecioTitulo">${producto.nombre}</div>
+                        <div class="modal--PrecioTitulo mb-3">$${producto.precio}</div>
+                        <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo o transferencia bancaria. </div>
+                        <div class="modal--Info"> Colores disponibles:</div>
+                        <div class="modal--Info mb-3"> ${producto.color} </div>
+                        <div class="modal--Info mb-3"><strong>Talles disponibles: ${producto.talle}</strong></div>
+                        <div class="modal--Info navHover mb-3"><a class="modal--Info" target="_blank" href="./guiaTalles.html">Guía de talles</a> </div>
+                        
+                        
+                        
+                        
+                </div>
+            </div>
+          </div>      
+          </div>
+          <div class="modal-footer hoverNegro">
+            <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
+            <button type="button" class="btn botonHacerPerdido "> <a target="_blank" href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
+            </button>
+            
+          </div>
+        </div>
+      </div>
+    </div>    
+    
+</div>   
+</div>     
+
+`);
+    
+}
+    }
+
+
+/*ListaUnicas*/
+
+if(producto.tipo === 2){
+$("#listaUnicas").append( 
+    `
+<div class="">
+        
+<div class="producto mx-3 mb-3" id= "producto_${producto.id}">
+
+<div class="text-center mt-4"><img class="producto--imagen" src="${producto.imagen}" ></div>
+<div class="text-center mt-2  producto--letra ">${producto.nombre}</div> 
+<div class="text-center producto--letra"> $${producto.precio} </div> 
+
+
+
+<!-- Button trigger modal -->
+<div class="row justify-content-center ">
+<button id="botonVer_${producto.id}" type="button" class="btn botonColor hoverBorder justify-content-center mt-2 bi bi-eye" data-toggle="modal" data-target="#verModal_${producto.id}">
+    VER
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="verModal_${producto.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content modalCSS">
+      <!--<div class="modal-header">
+        <h5 class="modal-title" id="verModalLabel"> ${producto.nombre}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>-->
+      
+      <div class="modal-body">
+      
+      <div class="container-fluid">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="row">
+            <div class="col-lg-6">
+                <img class="img-fluid producto--imagen--modal" src="${producto.imagen}" >
+            </div>
+            <div class="col-lg-6">
+                    <div class="modal--PrecioTitulo">${producto.nombre}</div>
+                    <div class="modal--PrecioTitulo mb-3">$${producto.precio}</div>
+                    <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo o transferencia bancaria. </div>
+                    <div class="modal--Info"> Colores disponibles:</div>
+                    <div class="modal--Info mb-3"> ${producto.color} </div>
+                    <div class="modal--Info mb-3"><strong>Talles disponibles: ${producto.talle}</strong></div>
+                    <div class="modal--Info navHover mb-3"><a class="modal--Info" target="_blank" href="./guiaTalles.html">Guía de talles</a> </div>
+                    
+                    
+                    
+                    
+            </div>
+        </div>
+      </div>      
+      </div>
+      <div class="modal-footer hoverNegro">
+        <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
+        <button type="button" class="btn botonHacerPerdido "> <a target="_blank" href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
+        </button>
+        
+      </div>
+    </div>
+  </div>
+</div>    
+
+</div>   
+</div>     
+
+`);
+}   
     
     }
         this.actualizarCarrito(productos);
@@ -193,9 +429,9 @@ class ProductoView {
 
     // Metodos para mostrar las distintas secciones
         
-    mostrarError() {
+    /*mostrarError() {
         $("#app").html(TEMPLATE_ERROR);
-    }
+    }*/
 
     mostrarCargando() {
         $("#app").html("<p>Cargando productos</p>");
@@ -240,12 +476,18 @@ class ProductoModel {
                         producto.id,
                         producto.imagen,
                         producto.talle,
-                        producto.color
+                        producto.color, 
+                        producto.tipo, 
+                        producto.favNuevo
                     );
                 }
                 this.productosCargados = true;
                 callback();
-            })
+            }
+            
+            )
+            
+            
         }
     }
 
@@ -289,10 +531,10 @@ class ProductoModel {
         
     }
 
-    crearProducto(nombre,precio,id,imagen,talle,color,tipo) {
+    crearProducto(nombre,precio,id,imagen,talle,color,tipo,favNuevo) {
         
         console.log('ProductoModel::crearProducto');
-        let nuevoProducto = new Producto(nombre,precio,id,imagen,talle,color,tipo);
+        let nuevoProducto = new Producto(nombre,precio,id,imagen,talle,color,tipo,favNuevo);
         this.productos.push(nuevoProducto);
     }
 }
@@ -354,6 +596,3 @@ class ProductoController {
         this.view.mostrarError();
     }
 }
-
-   
-
