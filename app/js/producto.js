@@ -109,12 +109,13 @@ class ProductoView {
                     </button>
                     <div class="row">
                         <div class="col-lg-6">
-                            <img class="img-fluid producto--imagen--modal" src="${producto.imagen}" >
+                            <img class="img-fluid producto--imagen--modal d-none d-lg-block" src="${producto.imagen}" >
                         </div>
                         <div class="col-lg-6">
                                 <div class="modal--PrecioTitulo">${producto.nombre}</div>
                                 <div class="modal--PrecioTitulo mb-3">$${producto.precio}</div>
-                                <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo o transferencia bancaria. </div>
+                                <div class="modal--Descuento mb-3">Precio abonando en efectivo o transferencia bancaria. </div>
+                                <div class="modal--Descuento mb-3">Abonando con tarjeta de crédito el precio del producto es $${(producto.precio*1.10).toFixed()}</div>
                                 <div class="modal--Info"> Colores disponibles:</div>
                                 <div class="modal--Info mb-3"> ${producto.color} </div>
                                 <div class="modal--Info mb-3"><strong>Talles disponibles: ${producto.talle}</strong></div>
@@ -127,9 +128,9 @@ class ProductoView {
                     </div>
                   </div>      
                   </div>
-                  <div class="modal-footer hoverNegro">
-                    <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
-                    <button type="button" class="btn botonHacerPerdido "> <a target="_blank" href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
+                  <div class="modal-footer hoverAccent">
+                    <button type="button" class="btn botonVolver hoverBorder modalTipografia " data-dismiss="modal">Volver</button>
+                    <button type="button" class="btn botonHacerPedido hoverBorder " title="Ingresando podes encargar todos los productos que necesitas"> <a target="_blank" href="https://wa.me/5492216562492?text=¡Hola!%20Quisiera%20encargar%20la%20remera%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
                     </button>
                     
                   </div>
@@ -182,12 +183,15 @@ class ProductoView {
             </button>
             <div class="row">
                 <div class="col-lg-6">
-                    <img class="img-fluid producto--imagen--modal" src="${producto.imagen}" >
+                    <img class="img-fluid producto--imagen--modal d-none d-lg-block" src="${producto.imagen}" >
                 </div>
                 <div class="col-lg-6">
                         <div class="modal--PrecioTitulo">${producto.nombre}</div>
                         <div class="modal--PrecioTitulo mb-3">$${producto.precio}</div>
-                        <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo o transferencia bancaria. </div>
+                        <div class="modal--Descuento mb-3">El modelo está disponible con cuello redondo $1800 y con capucha $2700</div>
+                        <div class="modal--Descuento mb-3">Precio abonando en efectivo o transferencia bancaria. </div>
+                        <div class="modal--Descuento--Buzo mb-3">Abonando con tarjeta de crédito el precio aumenta en un 10% </div>
+                        
                         <div class="modal--Info"> Colores disponibles:</div>
                         <div class="modal--Info mb-3"> ${producto.color} </div>
                         <div class="modal--Info mb-3"><strong>Talles disponibles: ${producto.talle}</strong></div>
@@ -200,9 +204,9 @@ class ProductoView {
             </div>
           </div>      
           </div>
-          <div class="modal-footer hoverNegro">
-            <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
-            <button type="button" class="btn botonHacerPerdido "> <a target="_blank" href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
+          <div class="modal-footer hoverAccent">
+            <button type="button" class="btn botonVolver hoverBorder modalTipografia " data-dismiss="modal">Volver</button>
+            <button type="button" class="btn botonHacerPedido hoverBorder " title="Ingresando podes encargar todos los productos que necesitas"> <a target="_blank" href="https://wa.me/5492216562492?text=¡Hola!%20Quisiera%20encargar%20el%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
             </button>
             
           </div>
@@ -260,7 +264,7 @@ if(producto.favNuevo === 1){
                 <div class="col-lg-6">
                         <div class="modal--PrecioTitulo">${producto.nombre}</div>
                         <div class="modal--PrecioTitulo mb-3">$${producto.precio}</div>
-                        <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo o transferencia bancaria. </div>
+                        <div class="modal--Descuento mb-3">Precio abonando en efectivo o transferencia bancaria. </div>
                         <div class="modal--Info"> Colores disponibles:</div>
                         <div class="modal--Info mb-3"> ${producto.color} </div>
                         <div class="modal--Info mb-3"><strong>Talles disponibles: ${producto.talle}</strong></div>
@@ -273,9 +277,9 @@ if(producto.favNuevo === 1){
             </div>
           </div>      
           </div>
-          <div class="modal-footer hoverNegro">
-            <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
-            <button type="button" class="btn botonHacerPerdido "> <a target="_blank" href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
+          <div class="modal-footer hoverAccent">
+            <button type="button" class="btn botonVolver hoverBorder modalTipografia " data-dismiss="modal">Volver</button>
+            <button type="button" class="btn botonHacerPedido hoverBorder "> <a target="_blank" href="https://wa.me/5492216562492?text=¡Hola!%20Quisiera%20encargar%20la%20prenda%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
             </button>
             
           </div>
@@ -332,12 +336,13 @@ $("#listaUnicas").append(
         </button>
         <div class="row">
             <div class="col-lg-6">
-                <img class="img-fluid producto--imagen--modal" src="${producto.imagen}" >
+                <img class="img-fluid producto--imagen--modal d-none d-lg-block" src="${producto.imagen}" >
             </div>
             <div class="col-lg-6">
                     <div class="modal--PrecioTitulo">${producto.nombre}</div>
                     <div class="modal--PrecioTitulo mb-3">$${producto.precio}</div>
-                    <div class="modal--Descuento mb-3">10% de descuento abonando en efectivo o transferencia bancaria. </div>
+                    <div class="modal--Descuento mb-3">Precio abonando en efectivo o transferencia bancaria. </div>
+                                <div class="modal--Descuento mb-3">Abonando con tarjeta de crédito el precio del producto es $${(producto.precio*1.10).toFixed()}</div>
                     <div class="modal--Info"> Colores disponibles:</div>
                     <div class="modal--Info mb-3"> ${producto.color} </div>
                     <div class="modal--Info mb-3"><strong>Talles disponibles: ${producto.talle}</strong></div>
@@ -350,9 +355,9 @@ $("#listaUnicas").append(
         </div>
       </div>      
       </div>
-      <div class="modal-footer hoverNegro">
-        <button type="button" class="btn botonHacerPerdido modalTipografia " data-dismiss="modal">Volver</button>
-        <button type="button" class="btn botonHacerPerdido "> <a target="_blank" href="https://wa.me/5492216562492?text=Me%20gustaría%20saber%20el%20precio%20del%20producto%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
+      <div class="modal-footer hoverAccent">
+        <button type="button" class="btn botonVolver hoverBorder modalTipografia " data-dismiss="modal">Volver</button>
+        <button type="button" class="btn botonHacerPedido hoverBorder " title="Ingresando podes encargar todos los productos que necesitas"> <a target="_blank" href="https://wa.me/5492216562492?text=¡Hola!%20Quisiera%20encargar%20la%20prenda%20${producto.nombre}" class="modalTipografia ">Hacer pedido </a>
         </button>
         
       </div>

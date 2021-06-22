@@ -105,7 +105,7 @@
         "nombre":"Buzo Iris",
         "precio":1800, 
         "imagen":"../assets/buzos/buzoIrisNegro.jpeg",
-        "color": "Negro y azul",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
         "tipo": 1,
         "favNuevo": 0
@@ -115,7 +115,7 @@
         "nombre":"Buzo Tigre",
         "precio":1800, 
         "imagen":"../assets/buzos/buzoRedondoTigre.jpeg",
-        "color": "Negro y azul",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
         "tipo": 1,
         "favNuevo": 0
@@ -125,7 +125,7 @@
         "nombre":"Buzo Constelación",
         "precio":1800, 
         "imagen":"../assets/buzos/buzoConstelacion.jpeg",
-        "color": "Negro y azul",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
         "tipo": 1,
         "favNuevo": 0
@@ -135,7 +135,7 @@
         "nombre":"Buzo Planetas",
         "precio":1800, 
         "imagen":"../assets/buzos/buzoPlanetas.jpeg",
-        "color": "Negro y azul",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
         "tipo": 1,
         "favNuevo": 1
@@ -187,7 +187,7 @@
         "nombre":"Buzo Good Vibes con capucha",
         "precio":2700, 
         "imagen":"../assets/buzos/buzoGoodVibesCapucha.jpeg",
-        "color": "Negro y azul",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
         "tipo": 1,
         "favNuevo": 0
@@ -207,7 +207,7 @@
         "nombre":"Buzo Girl Boos",
         "precio":1800, 
         "imagen":"../assets/buzos/buzoGirlBoosBlanco.jpeg",
-        "color": "Negro y azul",
+        "color": "Blanco, negro y azul",
         "talle": "1 al 8",
         "tipo": 1,
         "favNuevo": 0
